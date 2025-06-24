@@ -8,6 +8,9 @@ import plotly.express as px
 import logging
 import mlflow
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from model_serving_utils import query_endpoint
 
@@ -21,12 +24,12 @@ st.sidebar.title("🧠 Mode Selector")
 mode = st.sidebar.radio("Choose Mode", ["Unstructured", "Structured"])
 
 if mode == "Unstructured":
-    DATABRICKS_HOST = "https://adb-1853100697558625.5.azuredatabricks.net"
-    DATABRICKS_TOKEN = "dapi882341779b60ab4a53b2626ab26bbc29"
+    DATABRICKS_HOST = os.getenv("DATABRICKS_HOST")
+    DATABRICKS_TOKEN = os.getenv("DATABRICKS_TOKEN_U")
     SERVING_ENDPOINT = "databricks_RAG"
 else:
-    DATABRICKS_HOST = "https://adb-1853100697558625.5.azuredatabricks.net"
-    DATABRICKS_TOKEN = "dapi196b72bca2402674ee0103ebe3e6f225"
+    DATABRICKS_HOST = os.getenv("DATABRICKS_HOST")
+    DATABRICKS_TOKEN = os.getenv("DATABRICKS_TOKEN_S")
     SERVING_ENDPOINT = "databricks_structured"
     
 mlflow.set_tracking_uri("databricks")
