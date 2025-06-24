@@ -1,0 +1,11 @@
+streamlit==1.44.1
+mlflow>=2.12.2
+langchain
+langchain-community
+langchain-core
+langchain-experimental
+databricks-sdk
+databricks-langchain
+llama-parse
+pdfplumber
+databricks-sql-connector
