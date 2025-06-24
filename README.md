@@ -1,0 +1,1 @@
+A PoC on databricks made to test GenAI functionality built on Databricks, for querying & conversing with structured & unstructured data.
