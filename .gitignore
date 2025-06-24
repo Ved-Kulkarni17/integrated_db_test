@@ -1,2 +1,3 @@
 /.env
-/.databrickscfg
+.databrickscfg
+/__pycache__
