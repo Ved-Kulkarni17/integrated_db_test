@@ -105,11 +105,6 @@ if mode == "Unstructured":
                 st.markdown(answer)
         st.session_state["messages"].append({"role": "assistant", "content": answer})
 
-    with st.sidebar.expander("🛠 Debug Info"):
-        st.write("PDF:", st.session_state["file_name"])
-        st.write("Turns:", len(st.session_state["messages"]))
-        st.write("Endpoint:", SERVING_ENDPOINT)
-
 # ───── STRUCTURED MODE ─────
 else:
     st.title("📊 Structured SQL Assistant")
